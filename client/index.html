@@ -16,17 +16,18 @@
       const item = `<li>
         <p>${msg}</p> 
         <li>`
+          console.log(item)
       messages.insertAdjacentHTML('beforeend', item);
-
-      form.addEventListener('submit', (e) => {
-      e.preventDefault()
-
-      if (input.value) {
-        socket.emit('chat message', input.value)
-        input.value = ''
-      }
     })
 
+    form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    if (input.value) {
+      socket.emit('chat message', input.value)
+      input.value = ''
+    }
+    })
   </script>
   <style>
     *,
